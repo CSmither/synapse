@@ -414,10 +414,10 @@ For a more detailed guide to configuring your server for federation, see
 ## Email
 
 It is desirable for Synapse to have the capability to send email. This allows
-Synapse to send password reset emails, register users via their email address,
+Synapse to send password reset emails, send verifications when an email address is added to a user's account,
 and send email notifications to users when they receive new messages. 
 
-Email can be set up in two ways, either by giving Synapse SMTP details
+Email can be set up either by giving Synapse SMTP details
 (recommended), or delegating another server to send emails on your behalf. Note
 that the latter will be removed in a future Synapse version.
 
