@@ -138,3 +138,8 @@ class LimitBlockingTypes(object):
 
     MONTHLY_ACTIVE_USER = "monthly_active_user"
     HS_DISABLED = "hs_disabled"
+
+
+class GenericEventFieldsNames(object):
+    Labels = "org.matrix.labels"
+    LabelsHashes = "org.matrix.labels_hashes"
