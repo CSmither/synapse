@@ -414,33 +414,17 @@ For a more detailed guide to configuring your server for federation, see
 ## Email
 
 It is desirable for Synapse to have the capability to send email. This allows
-Synapse to send password reset emails, send verifications when an email address is added to a user's account,
-and send email notifications to users when they receive new messages. 
-
-Email can be set up either by giving Synapse SMTP details
-(recommended), or delegating another server to send emails on your behalf. Note
-that the latter will be removed in a future Synapse version.
+Synapse to send password reset emails, send verifications when an email address
+is added to a user's account, and send email notifications to users when they
+receive new messages. 
 
 To configure an SMTP server for Synapse, modify the configuration section
 headed `email`, and be sure to have at least the `smtp_host`, `smtp_port`
 and `notif_from` fields filled out.  You may also need to set `smtp_user`,
 `smtp_pass`, and `require_transport_security`.
 
-To delegate an external server to handle email sending, modify the
-`account_threepid_delegates` configuration option. Specify a domain name
-including the protocol, for example:
-  
-```
-account_threepid_delegates:
-    email: https://example.com # Delegate email sending to example.com
-```
-
-The domain you specify must be running a server that handles the email-related
-`/getValidated3pid `, `/requestToken` and `/submitToken` endpoints of the
-[Identity Service API ](https://matrix.org/docs/spec/identity_service/latest).
-
-If email is not configured through one of the above methods password reset,
-registration and notifications via email will be disabled.
+If email is not configured password reset, registration and notifications via
+email will be disabled.
 
 ## Registering a user
 
