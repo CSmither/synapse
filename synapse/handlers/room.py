@@ -520,7 +520,7 @@ class RoomCreationHandler(BaseHandler):
         if not is_requester_admin and not self.spam_checker.user_may_create_room(
             user_id
         ):
-            raise SynapseError(403, "You are not permitted to create rooms")
+            raise SynapseError(403, "You are not permitted to create rooms", "M_FORBIDDEN")
 
         if ratelimit:
             yield self.ratelimit(requester)
